@@ -204,7 +204,7 @@ function getFullNames(runners) {
 function firstNamesAllCaps(runners) {
   const result = [];
   
-  runners.map(person => result.push(`${person.first_name}`));
+  runners.map(person => result.push(`${person.first_name.toUpperCase()}`));
   
   return result;
 }
