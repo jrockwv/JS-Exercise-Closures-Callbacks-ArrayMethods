@@ -202,12 +202,18 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  const result = [];
-  
-  runners.map(person => result.push(`${person.first_name.toUpperCase()}`));
-  
-  return result;
+  return  runners.map(person => person.first_name.toUpperCase());
 }
+
+//second way of writing it!
+
+//function firstNamesAllCaps(runners) {
+  //const result = [];
+  
+  //runners.map(person => result.push(`${person.first_name.toUpperCase()}`));
+  
+ // return result;}
+
 
 /**
  * ### Challenge `getRunnersByTShirtSize`
@@ -222,8 +228,9 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let Shirts = runners.filter((size, index) => {return size.shirt_size === tShirtSize});
+  return Shirts;
 }
 
 /**
@@ -236,9 +243,14 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  return runners.reduce(function (accumulator, currentValue){
+    return accumulator + currentValue;}
+    ,0)
 }
+
+
+
 
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
